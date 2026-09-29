@@ -145,13 +145,13 @@
             <div class="projects-grid">
               <article class="project-card">
                 <a
-                  href="https://timothy-dev-tech.github.io/timPortfolio/"
+                  href="https://timothy-dev-tech.github.io/timothymuthuri/"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="project-card__image-link"
                 >
                   <img
-                    src="img/portfolio-preview.png"
+                    src="/public/img/portfolio-preview.png"
                     alt="timPortfolio website preview showing the hero section"
                     class="project-card__image"
                     loading="lazy"
@@ -159,7 +159,11 @@
                 </a>
                 <div class="project-card__body">
                   <h3>
-                    <a href="https://timothy-dev-tech.github.io/timPortfolio/" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://timothy-dev-tech.github.io/timothymuthuri/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       My Portfolio
                     </a>
                   </h3>
@@ -170,7 +174,7 @@
                     project.
                   </p>
                   <a
-                    href="https://timothy-dev-tech.github.io/timPortfolio/"
+                    href="https://timothy-dev-tech.github.io/timothymuthuri/"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="project-card__live-link"
@@ -188,7 +192,7 @@
                   class="project-card__image-link"
                 >
                   <img
-                    src="img/karu-tech-preview.png"
+                    src="/public/img/karu-tech-preview.png"
                     alt="Karatina Tech & Repair website preview"
                     class="project-card__image"
                     loading="lazy"
@@ -228,7 +232,7 @@
                   class="project-card__image-link"
                 >
                   <img
-                    src="img/login-page-preview.png"
+                    src="/public/img/login-page-preview.png"
                     alt="Login Page Project preview"
                     class="project-card__image"
                     loading="lazy"
@@ -274,7 +278,7 @@
             </p>
             <div class="resume-actions">
               <a
-                href="assets/Timothy-resume.pdf"
+                href="/public/assets/Timothy-resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="resume-action"
@@ -282,7 +286,7 @@
                 View Resume
               </a>
               <a
-                href="assets/Timothy-resume.pdf"
+                href="/public/assets/Timothy-resume.pdf"
                 download
                 class="resume-action"
               >
@@ -352,25 +356,6 @@
                       LinkedIn
                     </a>
                   </li>
-                  <li>
-                    <a href="mailto:timothyanamba7@gmail.com">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                        ></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                      </svg>
-                      Email
-                    </a>
-                  </li>
                 </ul>
 
                 <p class="contact-status">
@@ -379,11 +364,42 @@
                 </p>
               </div>
 
-              <form class="contact-form" action="#" method="POST">
+              <form
+                class="contact-form"
+                id="contact-form"
+                action="https://api.web3forms.com/submit"
+                method="POST"
+              >
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="8ee84554-3197-44a8-a245-4c9314369b35"
+                />
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="New message from portfolio contact"
+                />
+                <input
+                  class="form-botcheck"
+                  type="checkbox"
+                  name="botcheck"
+                  tabindex="-1"
+                  autocomplete="off"
+                  aria-hidden="true"
+                />
+
                 <div class="form-group">
                   <label for="contact-name">Name</label>
-                  <input type="text" id="contact-name" name="name" autocomplete="name" required />
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    autocomplete="name"
+                    required
+                  />
                 </div>
+
                 <div class="form-group">
                   <label for="contact-email">Email</label>
                   <input
@@ -394,6 +410,7 @@
                     required
                   />
                 </div>
+
                 <div class="form-group">
                   <label for="contact-message">Message</label>
                   <textarea
@@ -403,7 +420,14 @@
                     required
                   ></textarea>
                 </div>
+
                 <button type="submit" class="form-submit">Send Message</button>
+                <p
+                  class="form-status"
+                  id="form-status"
+                  role="status"
+                  aria-live="polite"
+                ></p>
               </form>
             </div>
           </div>
@@ -458,24 +482,6 @@
                 ></path>
                 <rect x="2" y="9" width="4" height="12"></rect>
                 <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </a>
-          </li>
-          <li>
-            <a href="mailto:timothyanamba7@gmail.com" aria-label="Email">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                aria-hidden="true"
-              >
-                <path
-                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                ></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
             </a>
           </li>

@@ -51,3 +51,45 @@ const observer = new IntersectionObserver(
 );
 
 sections.forEach((section) => observer.observe(section));
+
+const contactForm = document.getElementById('contact-form');
+const formStatus = document.getElementById('form-status');
+
+if (contactForm && formStatus) {
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    if (!contactForm.reportValidity()) {
+      return;
+    }
+
+    submitButton.disabled = true;
+    formStatus.dataset.state = 'sending';
+    formStatus.textContent = 'Sending your message…';
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Unable to send your message.');
+      }
+
+      contactForm.reset();
+      formStatus.dataset.state = 'success';
+      formStatus.textContent = 'Thanks—your message has been sent.';
+    } catch (error) {
+      formStatus.dataset.state = 'error';
+      formStatus.textContent =
+        error.message || 'Something went wrong. Please email me directly.';
+    } finally {
+      submitButton.disabled = false;
+    }
+  });
+}
